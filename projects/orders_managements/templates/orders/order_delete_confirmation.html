@@ -1,0 +1,12 @@
+{% extends 'orders/base.html '%}
+
+{% content block %}
+<form method="post">
+<h1>Confirm Delete </h1>
+    {% csrf_token %}
+<button type="submit">Yes </button>
+<a href="/orders_managements/">No </a>
+</form>
+{% endblock %}
+
+

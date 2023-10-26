@@ -1,0 +1,9 @@
+{% extends 'stores/base.html' %}
+{% block content %}
+<form method="post">
+<h1>Confirm Delete </h1>
+{% csrf_token %}
+<button type="submit">Yes </button>
+<a href="/stores_managements/">No </a>
+</form>
+{%endblock%}

@@ -1,0 +1,9 @@
+{% extends 'orders/base.html '%}
+
+{%  block content %}
+<!--Write your code here to create your order -->
+<h1>Update the orders : </h1>
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Update orders information</button>
+{% endblock %}

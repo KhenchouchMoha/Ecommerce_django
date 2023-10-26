@@ -1,0 +1,20 @@
+{% extends 'clients/base.html' %}
+{% block content %}
+<!-- list of cliens  -->
+<h1>Clients </h1>
+<a role="button" type="submit" href="{% url 'client_create' %}"> Connect </a> 
+     {% for client in clients_list  %}
+<h5>{{client.client_firstName}}</h5>
+<h5>{{client.client_SecondName}}</h5>
+<p>{{client.client_Adresse}}</p>
+<p>{{client.client_Email}}
+<a href="client/{{client.pk}}/">details</a>
+<a href="client/{{client.pk}}/update">edit</a>
+<hr>
+
+{% endfor %}
+{% endblock %}    
+
+
+
+

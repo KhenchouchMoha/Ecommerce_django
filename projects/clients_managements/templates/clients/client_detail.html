@@ -1,0 +1,13 @@
+{% extends 'clients/base.html' %}
+{% block content %}
+<!-- details for client -->
+<h1>{{client.client_id}}</h1>
+<h5>{{client.client_SecondName}}</h5>
+<h5>{{client.client_Email}}</h5>
+
+<a href='update/'>Edit information</a>
+<a href='delete/'>Delete account </a>
+<a href="/clients_managements/">Liste of clients</a>
+
+{% endblock %}    
+

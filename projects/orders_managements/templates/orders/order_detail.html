@@ -1,0 +1,27 @@
+{% extends 'orders/base.html '%}
+
+{%  block content %}
+<h1>{{order.order_username}}</h1>
+<p>{{order.order_date}}</p>
+<p>{{order.order_shipped}}</p>
+<p>{{order.order_shippingadresse}}</p>
+<p>{{order.order_orderstatus}}</p>
+<a href='update/'>Edit information</a>
+<a href='delete/'>Delete order </a>
+<a href="/orders_managements/">Home</a>
+{% endblock %}
+
+
+
+<!--
+
+    order_id = models.IntegerField(primary_key=True)
+    order_username=models.CharField(max_length=50)
+    order_date=models.DateTimeField()
+    order_shipped=models.DateTimeField()
+    order_shippingadresse=models.CharField(max_length=50)
+    order_orderstatus=models.BooleanField()
+    order_total=models.FloatField()
+
+
+-->

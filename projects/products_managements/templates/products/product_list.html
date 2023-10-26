@@ -1,0 +1,33 @@
+{% extends 'products/home.html' %}
+{% block content %}
+<a href="/stores_managements/">Stores</a>
+<a href="/orders_managements/">Orders</a>
+<h1>Products :</h1>
+<a role="button" type="submit" href="{% url 'product_create' %}">Add new product</a>
+{% for product in list_products %}
+<h5>{{ product.product_title }}</h5>
+<p>description :{{ product.product_descriptions|truncatechars:50 }}</p>
+<small>Price : {{product.product_price}}</small><br>
+<small>discount: {{product.product_discount}}</small><br>
+<small>In stock : {{product.product_in_stock}}</small><br>
+<small>categories : {{product.product_categories}}</small><br>
+<a href="product/{{product.pk}}/">details</a>
+<a href="product/{{product.pk}}/update">edit</a>
+<hr>
+{% empty %}
+<h6>No products Yet !</h6>
+{% endfor %}
+{% endblock %}
+
+
+
+<!--
+    product_id=models.IntegerField(primary_key=True)
+    product_title=models.CharField(max_length=500)
+    product_descriptions=models.TextField()
+    product_price=models.FloatField()
+    product_discount=models.IntegerField()
+    product_in_stock=models.IntegerField()
+    product_quantite=models.IntegerField()
+    product_categories=models.CharField(choices=CATEGORIES_CHOICES,max_length=26)
+-->

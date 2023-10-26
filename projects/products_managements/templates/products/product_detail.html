@@ -1,0 +1,19 @@
+{% extends 'products/home.html' %}
+{% block content %}
+<h1>{{products.product_title}}</h1>
+<p>{{products.product_descriptions}}</p>
+<a href='update'>Edit</a>
+<a href='delete'>Delete </a>
+<a href="/products_managements/">Home</a>
+{% endblock %}
+
+<!--
+    product_id=models.IntegerField(primary_key=True)
+    product_title=models.CharField(max_length=500)
+    product_descriptions=models.TextField()
+    product_price=models.FloatField()
+    product_discount=models.IntegerField()
+    product_in_stock=models.IntegerField()
+    product_quantite=models.IntegerField()
+    product_categories=models.CharField(choices=CATEGORIES_CHOICES,max_length=26)
+-->

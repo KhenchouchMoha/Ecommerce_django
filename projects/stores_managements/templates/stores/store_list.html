@@ -1,0 +1,17 @@
+{% extends 'stores/base.html' %}
+{% block content %}
+<h1>Stores :</h1>
+<a role="button" type="submit" href="{% url 'store_create' %}">Create you're online store :</a>
+{% for store in stores_list %}
+<h5>{{ store.store_name }}</h5>
+<p>store adresse :{{ store.store_adresse }}</p>
+<small>Numero telephone 1 : {{store.store_numero1}}</small><br>
+<small> Numero telephone 2 : {{store.store_numero2}}</small><br>
+<small> store email  : {{store.store_email}}</small><br>
+<a href="store/{{store.pk}}/">details</a>
+<a href="store/{{store.pk}}/update">edit</a>
+<hr>
+{% empty %}
+<h6>No store Yet !</h6>
+{% endfor %}
+{% endblock %}

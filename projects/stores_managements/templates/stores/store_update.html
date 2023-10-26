@@ -1,0 +1,10 @@
+{% extends 'stores/home.html' %}
+
+{% block content %}
+<form method="post" >
+<h1>Update store :</h1>
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">update store informations</button>
+</form>
+{% endblock %}

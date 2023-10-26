@@ -1,0 +1,21 @@
+{% extends 'stores/base.html' %}
+{% block content %}
+<h1>{{store.store_name}}</h1>
+<p>{{store.store_adresse}}</p>
+<p>{{store.store_description}}</p>
+<p>{{store.store_numero1}}</p>
+<p>{{store.store_numero2}}</p>
+<p>{{store.store_email}}</p>
+
+<a href="{{store.store_link_linkedin}}">Linkedin</a>
+<a href="{{store.store_link_instagram}}">instagram</a>
+<a href="{{store.store_link_facebook}}">Facebook</a><br>
+
+<a href='update/'>Edit information</a>
+<a href='delete/'>Delete store </a>
+<a href="/stores_managements/">Home</a>
+{% endblock %}
+
+
+
+

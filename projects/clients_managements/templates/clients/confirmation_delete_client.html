@@ -1,0 +1,12 @@
+{% extends 'clients/base.html' %}
+{% block content %}
+<!-- details for client -->
+<form method="post">
+    <h1>Confirm Delete </h1>
+    {% csrf_token %}
+    <button type="submit">Yes </button>
+    <a href="/clients_managements/">No </a>
+</form>
+{% endblock %}    
+
+

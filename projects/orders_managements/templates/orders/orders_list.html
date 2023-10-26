@@ -1,0 +1,33 @@
+{% extends 'orders/base.html '%}
+
+{%  block content %}
+<!--Write your code here to create your order -->
+<h1>Orders :</h1>
+<a role="button" type="submit" href="{% url 'order_create' %}">Create you're order :</a>
+{% for order in orders_list %}
+<h5>{{ order.order_username }}</h5>
+<p>Ordered :{{ order.order_date }}</p>
+<small>Shipped : {{order.order_shipped}}</small><br>
+<small>Shipping Adress : {{order.order_shippingadresse}}</small><br>
+<small>Order_status : {{order.order_orderstatus}}</small><br>
+<a href="order/{{order.pk}}/">details</a>
+<a href="order/{{order.pk}}/update">edit</a>
+<hr>
+{% empty %}
+<h6>No order Yet !</h6>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+<!--
+    order_id = models.IntegerField(primary_key=True)
+    order_username=models.CharField(max_length=50)
+    order_date=models.DateTimeField()
+    order_shipped=models.DateTimeField()
+    order_shippingadresse=models.CharField(max_length=50)
+    order_orderstatus=models.BooleanField()
+    order_total=models.FloatField()
+-->
